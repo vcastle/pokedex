@@ -1,0 +1,20 @@
+.search {
+    -webkit-appearance: none;
+    border: 1px solid #fcf7f7;
+    outline: none;
+    border-radius: 35px;
+    padding: 5px 20px;
+    width: 200px;
+    line-height: 30px;
+    margin-bottom: 25px;
+    background: whitesmoke;
+    font-variant-caps: all-small-caps;
+  }
+  
+  .search:focus {
+    border-radius: 35px;
+    border: 2px solid #0ff;
+    background: none;
+  }
+
+  
