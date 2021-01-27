@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/pokedex/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/pokedex/static/js/main.f60f5e03.chunk.js",
-    "main.js.map": "/pokedex/static/js/main.f60f5e03.chunk.js.map",
-    "runtime-main.js": "/pokedex/static/js/runtime-main.2554a39e.js",
-    "runtime-main.js.map": "/pokedex/static/js/runtime-main.2554a39e.js.map",
-    "static/js/2.1cae411b.chunk.js": "/pokedex/static/js/2.1cae411b.chunk.js",
-    "static/js/2.1cae411b.chunk.js.map": "/pokedex/static/js/2.1cae411b.chunk.js.map",
-    "static/js/3.2eee9e72.chunk.js": "/pokedex/static/js/3.2eee9e72.chunk.js",
-    "static/js/3.2eee9e72.chunk.js.map": "/pokedex/static/js/3.2eee9e72.chunk.js.map",
+    "main.css": "/pokedex/static/css/main.d496f363.chunk.css",
+    "main.js": "/pokedex/static/js/main.6b2815a7.chunk.js",
+    "main.js.map": "/pokedex/static/js/main.6b2815a7.chunk.js.map",
+    "runtime-main.js": "/pokedex/static/js/runtime-main.a5f059fd.js",
+    "runtime-main.js.map": "/pokedex/static/js/runtime-main.a5f059fd.js.map",
+    "static/js/2.fd6dd73a.chunk.js": "/pokedex/static/js/2.fd6dd73a.chunk.js",
+    "static/js/2.fd6dd73a.chunk.js.map": "/pokedex/static/js/2.fd6dd73a.chunk.js.map",
+    "static/js/3.02f9591d.chunk.js": "/pokedex/static/js/3.02f9591d.chunk.js",
+    "static/js/3.02f9591d.chunk.js.map": "/pokedex/static/js/3.02f9591d.chunk.js.map",
     "index.html": "/pokedex/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/pokedex/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.1cae411b.chunk.js.LICENSE.txt": "/pokedex/static/js/2.1cae411b.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/pokedex/static/media/logo.6ce24c58.svg"
+    "static/css/main.d496f363.chunk.css.map": "/pokedex/static/css/main.d496f363.chunk.css.map",
+    "static/js/2.fd6dd73a.chunk.js.LICENSE.txt": "/pokedex/static/js/2.fd6dd73a.chunk.js.LICENSE.txt",
+    "static/media/cyndaquil_404.5d8eb699.gif": "/pokedex/static/media/cyndaquil_404.5d8eb699.gif",
+    "static/media/gengarFight_404.782c5cde.gif": "/pokedex/static/media/gengarFight_404.782c5cde.gif",
+    "static/media/ghastly_404.d4d1e451.gif": "/pokedex/static/media/ghastly_404.d4d1e451.gif",
+    "static/media/mew_404.e1481cd4.gif": "/pokedex/static/media/mew_404.e1481cd4.gif",
+    "static/media/pokeball.b7cd3e0a.gif": "/pokedex/static/media/pokeball.b7cd3e0a.gif",
+    "static/media/togepi_404.54424f43.gif": "/pokedex/static/media/togepi_404.54424f43.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.2554a39e.js",
-    "static/js/2.1cae411b.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.f60f5e03.chunk.js"
+    "static/js/runtime-main.a5f059fd.js",
+    "static/js/2.fd6dd73a.chunk.js",
+    "static/css/main.d496f363.chunk.css",
+    "static/js/main.6b2815a7.chunk.js"
   ]
 }
