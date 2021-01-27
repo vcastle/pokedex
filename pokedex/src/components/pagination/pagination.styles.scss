@@ -1,0 +1,39 @@
+$light-purple: #634aff;
+$primary-purple: #4806ff;
+$teal-300: #00b1b1;
+$light-teal: #00e3e3;
+$highlight-blue: #0ff;
+$light-orange: #feb23e;
+$med-orange: #ff932c;
+
+%pagination-btn {
+  font-size: 16px;
+  padding: 6px 15px;
+  border-radius: 35px;
+  background-color: $med-orange;
+  border: none;
+  cursor: pointer;
+  margin: 20px 8px;
+  color: white;
+  font-variant: small-caps;
+
+  &:hover {
+    background-color: $light-orange;
+  }
+}
+
+.load {
+  //.load-more__btn
+  &-more {
+    &__btn {
+      @extend %pagination-btn;
+    }
+  }
+
+  //.load-less__btn
+  &-less {
+    &__btn {
+      @extend %pagination-btn;
+    }
+  }
+}
