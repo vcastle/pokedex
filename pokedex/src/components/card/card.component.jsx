@@ -6,7 +6,7 @@ export const Card = (props) => {
     <div className="card">
       <img
         className="card__img"
-        src={`https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${props.pokemon.name}.png`}
+        src={props.pokemon.sprites.front_default}
         alt={props.pokemon.name}
       />
       <p className="card__title"> {props.pokemon.name}</p>
