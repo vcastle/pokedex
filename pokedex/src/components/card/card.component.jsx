@@ -3,13 +3,25 @@ import "./card.styles.scss";
 
 export const Card = (props) => {
   return (
-    <div className="card">
+    <div className={props.isDarkMode ? "card--dark-mode" : "card"}>
+      <span className="card__header">
+        <p className={props.isDarkMode ? "card__title--dark-mode" : "card__title"}>{props.pokemon.name}</p>
+        <p className="card__id">
+          <span>#</span>
+          {props.pokemon.id}
+        </p>
+      </span>
+
+      <p className="card__id"></p>
       <img
         className="card__img"
-        src={props.pokemon.sprites.front_default}
+        src={
+          props.isDarkMode
+            ? props.pokemon.sprites.front_shiny
+            : props.pokemon.sprites.front_default
+        }
         alt={props.pokemon.name}
       />
-      <p className="card__title"> {props.pokemon.name}</p>
     </div>
   );
 };

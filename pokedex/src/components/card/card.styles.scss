@@ -1,11 +1,11 @@
 $teal: #419eaf;
 $light-teal: #00e3e3;
+$mid-teal: #0cc7c7;
 $highlight-blue: #0ff;
 
-.card {
+%card {
   display: flex;
   flex-direction: column;
-  background: aliceblue;
   border: 1.8px solid $light-teal;
   border-radius: 5px;
   padding: 25px;
@@ -15,6 +15,23 @@ $highlight-blue: #0ff;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
   box-shadow: 5px 5px 4px $highlight-blue;
+}
+.card {
+  @extend %card;
+  background: aliceblue;
+
+  //.card--dark-mode
+  &--dark-mode {
+    @extend %card;
+    background: none;
+  }
+
+  //.card__header
+  &__header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
 
   //.card__img
   &__img {
@@ -27,6 +44,21 @@ $highlight-blue: #0ff;
   &__title {
     font-family: "Courier New", Courier, monospace;
     font-size: 18px;
+
+    //.card__title--dark-mode
+    &--dark-mode {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px;
+      color: whitesmoke;
+    }
+  }
+
+  //.card__id
+  &__id {
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: 700;
+    color: $mid-teal;
   }
 }
 

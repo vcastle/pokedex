@@ -6,7 +6,11 @@ export const CardList = (props) => {
   return (
     <div className="card-list">
       {props.pokemon.map((pokemon) => (
-        <Card key={pokemon.url} pokemon={pokemon} />
+        <Card
+          key={pokemon.url}
+          pokemon={pokemon}
+          isDarkMode={props.isDarkMode}
+        />
       ))}
     </div>
   );

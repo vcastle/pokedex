@@ -44,12 +44,14 @@ class App extends Component {
       ],
       isNextLoading: false,
       isPrevLoading: false,
+      isDarkMode: false,
     };
 
     /** Bound methods */
     this.loadMorePokemon = this.loadMorePokemon.bind(this);
     this.loadLessPokemon = this.loadLessPokemon.bind(this);
     this.fetchDetails = this.fetchDetails.bind(this);
+    this.handleDarkMode = this.handleDarkMode.bind(this);
   }
 
   componentDidMount() {
@@ -68,7 +70,7 @@ class App extends Component {
 
   fetchDetails(pokemon) {
     /** Reset the allPokemon[] */
-    this.state.allPokemon = [];
+    this.setState({ allPokemon: [] });
 
     fetch(pokemon.url)
       .then((response) => response.json())
@@ -154,9 +156,15 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   };
 
+  handleDarkMode() {
+    this.setState((state) => ({
+      isDarkMode: !state.isDarkMode,
+    }));
+  }
+
   render() {
     /** Search */
-    const { allPokemon, searchField } = this.state;
+    const { allPokemon, searchField, isDarkMode } = this.state;
 
     const filteredPokemon = allPokemon.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(searchField.toLowerCase())
@@ -167,13 +175,26 @@ class App extends Component {
     this.randomPokemonIndex = this.state.noPokemon[randomInt];
 
     return (
-      <div className="App">
+      <div className={this.state.isDarkMode ? "app--dark-mode" : "app"}>
         <Header headerText="pokedex"></Header>
 
-        <SearchBox
-          placeholder="Search Pokemon"
-          handleChange={this.handleChange}
-        ></SearchBox>
+        <div className="app__tools">
+          <SearchBox
+            placeholder="Search Pokemon"
+            handleChange={this.handleChange}
+          ></SearchBox>
+
+          <button
+            className={
+              this.state.isDarkMode ? "app__btn--dark-mode" : "app__btn"
+            }
+            type="button"
+            title="Toggle Shiny Pokemon"
+            onClick={this.handleDarkMode}
+          >
+            {this.state.isDarkMode ? "SHINY ON" : "SHINY OFF"}
+          </button>
+        </div>
 
         {filteredPokemon.length === 0 ? (
           <div className="not-found">
@@ -186,7 +207,10 @@ class App extends Component {
             <p className="not-found__text">{this.randomPokemonIndex.text}</p>
           </div>
         ) : (
-          <CardList pokemon={filteredPokemon}></CardList>
+          <CardList
+            pokemon={filteredPokemon}
+            isDarkMode={isDarkMode}
+          ></CardList>
         )}
 
         {filteredPokemon.length > 0 && (
