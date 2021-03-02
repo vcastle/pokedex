@@ -27,8 +27,7 @@ class App extends Component {
     this.baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=24";
 
     this.state = {
-      pokemon: [],
-      pokemonDetails: [],
+      allPokemon: [],
       searchField: "",
       noPokemon: [
         { text: "Nothing but a Togepi in sight.", src: togepi },
@@ -47,8 +46,10 @@ class App extends Component {
       isPrevLoading: false,
     };
 
-    this.fetchMorePokemon = this.fetchMorePokemon.bind(this);
-    this.fetchLessPokemon = this.fetchLessPokemon.bind(this);
+    /** Bound methods */
+    this.loadMorePokemon = this.loadMorePokemon.bind(this);
+    this.loadLessPokemon = this.loadLessPokemon.bind(this);
+    this.fetchDetails = this.fetchDetails.bind(this);
   }
 
   componentDidMount() {
@@ -58,12 +59,31 @@ class App extends Component {
   getPokemon() {
     fetch(this.baseUrl)
       .then((response) => response.json())
-      .then((pokemon) => {
-        this.setState({ pokemon: pokemon.results });
+      .then((allPokemon) => {
+        allPokemon.results.forEach((pokemon) => {
+          this.fetchDetails(pokemon, true);
+        });
       });
   }
 
-  fetchMorePokemon() {
+  fetchDetails(pokemon) {
+    /** Reset the allPokemon[] */
+    this.state.allPokemon = [];
+
+    fetch(pokemon.url)
+      .then((response) => response.json())
+      .then((pokeData) => {
+        this.setState({
+          allPokemon: this.state.allPokemon
+            .concat(pokeData)
+            .sort((a, b) => a.id - b.id),
+          isNextLoading: false,
+          isPrevLoading: false,
+        });
+      });
+  }
+
+  loadMorePokemon() {
     if (this.initialPageLoad) {
       this.initialPageLoad = false;
     } else {
@@ -82,7 +102,7 @@ class App extends Component {
     this.fetchPokemon(morePokemonUrl, true);
   }
 
-  fetchLessPokemon() {
+  loadLessPokemon() {
     //** If we went to end of pages, we need to remove the extra 7 */
     this.currentNumberOfPokes =
       this.nextNumberOfPokemon === 127
@@ -116,13 +136,15 @@ class App extends Component {
       this.setState({ isNextLoading: false, isPrevLoading: true });
     }
 
-    fetch(url)
+    this.fetchOffsetDetails(url);
+  }
+
+  fetchOffsetDetails(offsetUrl) {
+    fetch(offsetUrl)
       .then((response) => response.json())
-      .then((pokemon) => {
-        this.setState({
-          pokemon: pokemon.results,
-          isNextLoading: false,
-          isPrevLoading: false,
+      .then((offsetPokemon) => {
+        offsetPokemon.results.forEach((pokemon) => {
+          this.fetchDetails(pokemon, true);
         });
       });
   }
@@ -134,8 +156,9 @@ class App extends Component {
 
   render() {
     /** Search */
-    const { pokemon, searchField } = this.state;
-    const filteredPokemon = pokemon.filter((pokemon) =>
+    const { allPokemon, searchField } = this.state;
+
+    const filteredPokemon = allPokemon.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
@@ -172,8 +195,8 @@ class App extends Component {
             isNextLoading={this.state.isNextLoading}
             isPrevPageBtnShowing={this.isPrevPageBtnShowing}
             isNextPageBtnShowing={this.isNextPageBtnShowing}
-            fetchLessPokemon={this.fetchLessPokemon}
-            fetchMorePokemon={this.fetchMorePokemon}
+            loadLessPokemon={this.loadLessPokemon}
+            loadMorePokemon={this.loadMorePokemon}
           ></Pagination>
         )}
       </div>

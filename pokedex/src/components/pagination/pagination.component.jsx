@@ -11,8 +11,8 @@ const spinner = css`
 `;
 
 export const Pagination = ({
-  fetchMorePokemon,
-  fetchLessPokemon,
+  loadMorePokemon,
+  loadLessPokemon,
   isNextPageBtnShowing,
   isPrevPageBtnShowing,
   isPrevLoading,
@@ -26,7 +26,7 @@ export const Pagination = ({
       <button
         className="load-less__btn"
         type="button"
-        onClick={fetchLessPokemon}
+        onClick={loadLessPokemon}
       >
         {isPrevLoading ? (
           <ClipLoader size={15} css={spinner} margin={2} />
@@ -40,7 +40,7 @@ export const Pagination = ({
       <button
         className="load-more__btn"
         type="button"
-        onClick={fetchMorePokemon}
+        onClick={loadMorePokemon}
       >
         {isNextLoading ? (
           <ClipLoader size={15} css={spinner} margin={2} />
@@ -51,6 +51,3 @@ export const Pagination = ({
     )}
   </React.Fragment>
 );
-
-// TODO:
-// Add previous and next buttons
