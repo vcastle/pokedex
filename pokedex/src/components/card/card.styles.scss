@@ -16,7 +16,14 @@ $highlight-blue: #0ff;
   transition: transform 0.25s ease-out;
   box-shadow: 5px 5px 4px $highlight-blue;
 }
+
+/* Card
+--------------------------------------------------*/
 .card {
+  &:hover {
+    transform: scale(1.05);
+  }
+
   @extend %card;
   background: aliceblue;
 
@@ -42,12 +49,10 @@ $highlight-blue: #0ff;
 
   //.card__title
   &__title {
-    font-family: "Courier New", Courier, monospace;
     font-size: 18px;
 
     //.card__title--dark-mode
     &--dark-mode {
-      font-family: "Courier New", Courier, monospace;
       font-size: 18px;
       color: whitesmoke;
     }
@@ -60,8 +65,21 @@ $highlight-blue: #0ff;
     font-weight: 700;
     color: $mid-teal;
   }
-}
 
-.card:hover {
-  transform: scale(1.05);
+  //.card__types
+  &__types {
+    display: flex;
+    justify-content: center;
+  }
+
+  //.card__type-text
+  &__type-text {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: solid 2px $mid-teal;
+    width: 100%;
+    max-width: 80px;
+    padding: 4px;
+    margin: 5px;
+  }
 }

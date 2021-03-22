@@ -5,7 +5,13 @@ export const Card = (props) => {
   return (
     <div className={props.isDarkMode ? "card--dark-mode" : "card"}>
       <span className="card__header">
-        <p className={props.isDarkMode ? "card__title--dark-mode" : "card__title"}>{props.pokemon.name}</p>
+        <p
+          className={
+            props.isDarkMode ? "card__title--dark-mode" : "card__title"
+          }
+        >
+          {props.pokemon.name}
+        </p>
         <p className="card__id">
           <span>#</span>
           {props.pokemon.id}
@@ -22,6 +28,14 @@ export const Card = (props) => {
         }
         alt={props.pokemon.name}
       />
+
+      <div className="card__types">
+        {props.pokemon.types.map((type) => (
+          <p key={props.key} className="card__type-text">
+            {type.type.name}
+          </p>
+        ))}
+      </div>
     </div>
   );
 };
