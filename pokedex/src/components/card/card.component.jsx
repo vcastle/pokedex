@@ -1,7 +1,12 @@
 import React from "react";
 import "./card.styles.scss";
+var classNames = require("classnames");
 
 export const Card = (props) => {
+  let typeClass = classNames({
+    "card__type-text--dark": props.isDarkMode,
+  });
+
   return (
     <div className={props.isDarkMode ? "card--dark-mode" : "card"}>
       <span className="card__header">
@@ -30,9 +35,9 @@ export const Card = (props) => {
       />
 
       <div className="card__types">
-        {props.pokemon.types.map((type) => (
-          <p key={props.key} className="card__type-text">
-            {type.type.name}
+        {props.pokemon.types.map((types) => (
+          <p key={props.key} className={`card__type-text ${typeClass}`}>
+            {types.type.name}
           </p>
         ))}
       </div>
