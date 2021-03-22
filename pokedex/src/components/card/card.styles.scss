@@ -2,11 +2,12 @@ $teal: #419eaf;
 $light-teal: #00e3e3;
 $mid-teal: #0cc7c7;
 $highlight-blue: #0ff;
+$dark-teal: #05384b;
+$soft-blue: #b4d9fa;
 
 %card {
   display: flex;
   flex-direction: column;
-  border: 1.8px solid $light-teal;
   border-radius: 5px;
   padding: 25px;
   cursor: pointer;
@@ -14,23 +15,25 @@ $highlight-blue: #0ff;
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-  box-shadow: 5px 5px 4px $highlight-blue;
+  box-shadow: inset -4px -4px #d5eafd;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* Card
 --------------------------------------------------*/
 .card {
-  &:hover {
-    transform: scale(1.05);
-  }
-
   @extend %card;
   background: aliceblue;
 
   //.card--dark-mode
   &--dark-mode {
     @extend %card;
-    background: none;
+    border-radius: 0;
+    background: #096082;
+    box-shadow: inset -4px -4px #054a64;
   }
 
   //.card__header
@@ -49,21 +52,21 @@ $highlight-blue: #0ff;
 
   //.card__title
   &__title {
-    font-size: 18px;
+    font-size: 15px;
 
     //.card__title--dark-mode
     &--dark-mode {
-      font-size: 18px;
+      font-size: 15px;
       color: whitesmoke;
     }
   }
 
   //.card__id
   &__id {
-    font-size: 16px;
-    font-family: monospace;
-    font-weight: 700;
-    color: $mid-teal;
+    font-size: 15px;
+    margin-left: 18px;
+    color: $light-teal;
+    font-family: "Pokemon GB", monospace;
   }
 
   //.card__types
@@ -74,12 +77,23 @@ $highlight-blue: #0ff;
 
   //.card__type-text
   &__type-text {
-    background-color: whitesmoke;
-    border-radius: 5px;
-    border: solid 2px $mid-teal;
     width: 100%;
     max-width: 80px;
-    padding: 4px;
+    padding: 6px;
     margin: 5px;
+    color: $dark-teal;
+    font-size: 10px;
+    background: $soft-blue;
+    font-family: "Pokemon GB", monospace;
+
+    box-shadow: -2.5px 0 0 0 $soft-blue, 2.5px 0 0 0 $soft-blue,
+      0 -2.5px 0 0 $soft-blue, 0 2.5px 0 0 $soft-blue;
+
+    //.card__type-text--dark
+    &--dark {
+      background-color: $mid-teal;
+      box-shadow: -2.5px 0 0 0 $mid-teal, 2.5px 0 0 0 $mid-teal,
+        0 -2.5px 0 0 $mid-teal, 0 2.5px 0 0 $mid-teal;
+    }
   }
 }
