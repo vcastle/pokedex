@@ -1,5 +1,6 @@
-$dark-navy: #05384b;
+$dark-teal: #05384b;
 $highlight-blue: #0ff;
+$alice-blue-mid: #e1f1ff;
 
 %btn {
   margin-left: 15px;
@@ -12,12 +13,11 @@ $highlight-blue: #0ff;
 }
 .app {
   text-align: center;
-
   &__btn {
     @extend %btn;
 
-    border: solid 1px $dark-navy;
-    color: $dark-navy;
+    border: solid 1px $dark-teal;
+    color: $dark-teal;
 
     //.app__btn--dark-mode
     &--dark-mode {
@@ -31,7 +31,7 @@ $highlight-blue: #0ff;
   //.app--dark-mode
   &--dark-mode {
     text-align: center;
-    background: $dark-navy; //#05384b;
+    background: $dark-teal;
   }
 }
 
