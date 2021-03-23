@@ -31,7 +31,6 @@ $soft-blue: #b4d9fa;
   //.card--dark-mode
   &--dark-mode {
     @extend %card;
-    border-radius: 0;
     background: #096082;
     box-shadow: inset -4px -4px #054a64;
   }

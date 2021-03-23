@@ -1,20 +1,16 @@
-$light-purple: #634aff;
-$primary-purple: #4806ff;
-$teal-300: #00b1b1;
-$light-teal: #00e3e3;
-$highlight-blue: #0ff;
-$light-orange: #feb23e;
-$med-orange: #ff932c;
+$dark-teal: #05384b;
+$light-orange: #cfaa28;
+$color-maize: #e2c044;
 
 %pagination-btn {
   font-size: 16px;
   padding: 6px 15px;
   border-radius: 35px;
-  background-color: $med-orange;
+  background-color: $color-maize;
   border: none;
   cursor: pointer;
   margin: 20px 8px;
-  color: white;
+  color: $dark-teal;
   font-variant: small-caps;
 
   &:hover {
