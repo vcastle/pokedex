@@ -176,7 +176,7 @@ class App extends Component {
 
     return (
       <div className={this.state.isDarkMode ? "app--dark-mode" : "app"}>
-        <Header headerText="pokedex"></Header>
+        <Header headerText="pokedex" isDarkMode={isDarkMode}></Header>
 
         <div className="app__tools">
           <SearchBox
