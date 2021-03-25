@@ -82,17 +82,146 @@ $soft-blue: #b4d9fa;
     margin: 5px;
     color: $dark-teal;
     font-size: 10px;
-    background: $soft-blue;
     font-family: "Pokemon GB", monospace;
 
-    box-shadow: -2.5px 0 0 0 $soft-blue, 2.5px 0 0 0 $soft-blue,
-      0 -2.5px 0 0 $soft-blue, 0 2.5px 0 0 $soft-blue;
+    //.card__type-text--light
+    &--light {
+      background: $soft-blue;
+      box-shadow: -2.5px 0 0 0 $soft-blue, 2.5px 0 0 0 $soft-blue,
+        0 -2.5px 0 0 $soft-blue, 0 2.5px 0 0 $soft-blue;
+    }
 
     //.card__type-text--dark
     &--dark {
       background-color: $mid-teal;
       box-shadow: -2.5px 0 0 0 $mid-teal, 2.5px 0 0 0 $mid-teal,
         0 -2.5px 0 0 $mid-teal, 0 2.5px 0 0 $mid-teal;
+    }
+
+    /** Types **/
+
+    //.card__type-text--grass
+    &--grass {
+      background-color: #79c951;
+      box-shadow: -2.5px 0 0 0 #79c951, 2.5px 0 0 0 #79c951,
+        0 -2.5px 0 0 #79c951, 0 2.5px 0 0 #79c951;
+    }
+
+    //.card__type-text--poison
+    &--poison {
+      color: whitesmoke;
+      background-color: #ca4bce;
+      box-shadow: -2.5px 0 0 0 #ca4bce, 2.5px 0 0 0 #ca4bce,
+        0 -2.5px 0 0 #ca4bce, 0 2.5px 0 0 #ca4bce;
+    }
+
+    //.card__type-text--fire
+    &--fire {
+      background-color: #f0802f;
+      box-shadow: -2.5px 0 0 0 #f0802f, 2.5px 0 0 0 #f0802f,
+        0 -2.5px 0 0 #f0802f, 0 2.5px 0 0 #f0802f;
+    }
+
+    //.card__type-text--flying
+    &--flying {
+      background-color: #a891f1;
+      box-shadow: -2.5px 0 0 0 #a891f1, 2.5px 0 0 0 #a891f1,
+        0 -2.5px 0 0 #a891f1, 0 2.5px 0 0 #a891f1;
+    }
+
+    //.card__type-text--water
+    &--water {
+      color: whitesmoke;
+      background-color: #3a78ff;
+      box-shadow: -2.5px 0 0 0 #3a78ff, 2.5px 0 0 0 #3a78ff,
+        0 -2.5px 0 0 #3a78ff, 0 2.5px 0 0 #3a78ff;
+    }
+
+    //.card__type-text--bug
+    &--bug {
+      background-color: #a7b820;
+      box-shadow: -2.5px 0 0 0 #a7b820, 2.5px 0 0 0 #a7b820,
+        0 -2.5px 0 0 #a7b820, 0 2.5px 0 0 #a7b820;
+    }
+
+    //.card__type-text--normal
+    &--normal {
+      background-color: #a9a978;
+      box-shadow: -2.5px 0 0 0 #a9a978, 2.5px 0 0 0 #a9a978,
+        0 -2.5px 0 0 #a9a978, 0 2.5px 0 0 #a9a978;
+    }
+
+    //.card__type-text--electric
+    &--electric {
+      background-color: #f7d12f;
+      box-shadow: -2.5px 0 0 0 #f7d12f, 2.5px 0 0 0 #f7d12f,
+        0 -2.5px 0 0 #f7d12f, 0 2.5px 0 0 #f7d12f;
+    }
+
+    //.card__type-text--ground
+    &--ground {
+      background-color: #e0bf67;
+      box-shadow: -2.5px 0 0 0 #e0bf67, 2.5px 0 0 0 #e0bf67,
+        0 -2.5px 0 0 #e0bf67, 0 2.5px 0 0 #e0bf67;
+    }
+
+    //.card__type-text--fairy
+    &--fairy {
+      background-color: #f0b5bd;
+      box-shadow: -2.5px 0 0 0 #f0b5bd, 2.5px 0 0 0 #f0b5bd,
+        0 -2.5px 0 0 #f0b5bd, 0 2.5px 0 0 #f0b5bd;
+    }
+
+    //.card__type-text--fighting
+    &--fighting {
+      background-color: #d6563f;
+      box-shadow: -2.5px 0 0 0 #d6563f, 2.5px 0 0 0 #d6563f,
+        0 -2.5px 0 0 #d6563f, 0 2.5px 0 0 #d6563f;
+    }
+
+    //.card__type-text--psychic
+    &--psychic {
+      color: whitesmoke;
+      background-color: #f95889;
+      box-shadow: -2.5px 0 0 0 #f95889, 2.5px 0 0 0 #f95889,
+        0 -2.5px 0 0 #f95889, 0 2.5px 0 0 #f95889;
+    }
+
+    //.card__type-text--rock
+    &--rock {
+      background-color: #b9a038;
+      box-shadow: -2.5px 0 0 0 #b9a038, 2.5px 0 0 0 #b9a038,
+        0 -2.5px 0 0 #b9a038, 0 2.5px 0 0 #b9a038;
+    }
+
+    //.card__type-text--steel
+    &--steel {
+      background-color: #b8b8cf;
+      box-shadow: -2.5px 0 0 0 #b8b8cf, 2.5px 0 0 0 #b8b8cf,
+        0 -2.5px 0 0 #b8b8cf, 0 2.5px 0 0 #b8b8cf;
+    }
+
+    //.card__type-text--ice
+    &--ice {
+      background-color: #97d8d7;
+      box-shadow: -2.5px 0 0 0 #97d8d7, 2.5px 0 0 0 #97d8d7,
+        0 -2.5px 0 0 #97d8d7, 0 2.5px 0 0 #97d8d7;
+    }
+
+    //.card__type-text--ghost
+    &--ghost {
+      color: whitesmoke;
+      background-color: #705899;
+      box-shadow: -2.5px 0 0 0 #705899, 2.5px 0 0 0 #705899,
+        0 -2.5px 0 0 #705899, 0 2.5px 0 0 #705899;
+    }
+
+    //.card__type-text--dragon
+    &--dragon {
+      color: whitesmoke;
+      background-color: #642af8;
+      box-shadow: -2.5px 0 0 0 #642af8, 2.5px 0 0 0 #642af8,
+        0 -2.5px 0 0 #642af8, 0 2.5px 0 0 #642af8;
     }
   }
 }
