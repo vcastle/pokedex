@@ -3,8 +3,7 @@
 Current Feature:
 
 Toggle Shiny Pokemon
+![pokemon_shiny_off](https://user-images.githubusercontent.com/30732277/112424724-27a48600-8cf2-11eb-83b9-75bea145d474.png)
 
-![pokedex_shiny_off](https://user-images.githubusercontent.com/30732277/111934917-9e861880-8a7f-11eb-9dab-ca3e40106025.png)
-
-![pokedex_shiny_on](https://user-images.githubusercontent.com/30732277/111935007-cd03f380-8a7f-11eb-9622-a15a18b4191e.png)
+![pokemon__shiny__on](https://user-images.githubusercontent.com/30732277/112424810-4e62bc80-8cf2-11eb-9967-2040bf1e75e8.png)
 
