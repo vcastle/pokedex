@@ -1,6 +1,4 @@
-$primary-purple: #4806ff;
-$light-teal: #00e3e3;
-$dark-teal: #05384b;
+@import "../../scss/main.scss";
 
 .header {
   display: flex;
@@ -9,13 +7,14 @@ $dark-teal: #05384b;
   height: 65px;
   font-size: 30px;
   font-family: "Pokemon GB", monospace;
+
   //.header__text
   &__text {
-    color: $dark-teal;
+    color: $color-midnight;
 
     //.header__text--dark-mode
     &--dark-mode {
-      color: $light-teal;
+      color: $color-sea-foam;
     }
   }
 

@@ -1,6 +1,4 @@
-$dark-teal: #05384b;
-$light-orange: #cfaa28;
-$color-maize: #e2c044;
+@import "../../scss/main.scss";
 
 %pagination-btn {
   font-size: 16px;
@@ -10,11 +8,11 @@ $color-maize: #e2c044;
   border: none;
   cursor: pointer;
   margin: 20px 8px;
-  color: $dark-teal;
+  color: $color-midnight;
   font-variant: small-caps;
 
   &:hover {
-    background-color: $light-orange;
+    background-color: $color-lemon;
   }
 }
 

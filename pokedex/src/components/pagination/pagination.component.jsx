@@ -7,7 +7,7 @@ import "./pagination.styles.scss";
 const spinner = css`
   display: block;
   margin: 0 auto;
-  border-color: #0ff;
+  border-color: $color-lazer-blue;
 `;
 
 export const Pagination = ({
@@ -16,7 +16,7 @@ export const Pagination = ({
   isNextPageBtnShowing,
   isPrevPageBtnShowing,
   isPrevLoading,
-  isNextLoading
+  isNextLoading,
 }) => (
   /** Functional component */
   /** Fragments let you group a list of children without adding extra nodes to the DOM. */

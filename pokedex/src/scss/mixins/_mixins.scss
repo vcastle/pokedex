@@ -1,0 +1,8 @@
+/*----------------------------------------------------------
+    Pixel Background
+   --------------------------------------------------------*/
+@mixin pixel-background($background, $pixel, $pixel-negative) {
+  background-color: $background;
+  box-shadow: $pixel-negative 0 0 0 $background, $pixel 0 0 0 $background,
+    0 $pixel-negative 0 0 $background, 0 $pixel 0 0 $background;
+}
