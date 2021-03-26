@@ -1,9 +1,4 @@
-$teal: #419eaf;
-$light-teal: #00e3e3;
-$mid-teal: #0cc7c7;
-$highlight-blue: #0ff;
-$dark-teal: #05384b;
-$soft-blue: #b4d9fa;
+@import "../../scss/main.scss";
 
 %card {
   display: flex;
@@ -15,7 +10,7 @@ $soft-blue: #b4d9fa;
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-  box-shadow: inset -4px -4px #d5eafd;
+  box-shadow: inset -4px -4px $color-cloud;
 
   &:hover {
     transform: scale(1.05);
@@ -26,13 +21,13 @@ $soft-blue: #b4d9fa;
 --------------------------------------------------*/
 .card {
   @extend %card;
-  background: aliceblue;
+  background: $colo-alice-blue;
 
   //.card--dark-mode
   &--dark-mode {
     @extend %card;
-    background: #096082;
-    box-shadow: inset -4px -4px #054a64;
+    background: $color-waves;
+    box-shadow: inset -4px -4px $color-deep-sea;
   }
 
   //.card__header
@@ -56,7 +51,7 @@ $soft-blue: #b4d9fa;
     //.card__title--dark-mode
     &--dark-mode {
       font-size: 15px;
-      color: whitesmoke;
+      color: $color-smoke;
     }
   }
 
@@ -64,7 +59,7 @@ $soft-blue: #b4d9fa;
   &__id {
     font-size: 15px;
     margin-left: 18px;
-    color: $light-teal;
+    color: $color-sea-foam;
     font-family: "Pokemon GB", monospace;
   }
 
@@ -80,148 +75,116 @@ $soft-blue: #b4d9fa;
     max-width: 80px;
     padding: 6px;
     margin: 5px;
-    color: $dark-teal;
+    color: $color-midnight;
     font-size: 10px;
     font-family: "Pokemon GB", monospace;
 
     //.card__type-text--light
     &--light {
-      background: $soft-blue;
-      box-shadow: -2.5px 0 0 0 $soft-blue, 2.5px 0 0 0 $soft-blue,
-        0 -2.5px 0 0 $soft-blue, 0 2.5px 0 0 $soft-blue;
+      background: $color-bubbles;
+      box-shadow: -2.5px 0 0 0 $color-bubbles, 2.5px 0 0 0 $color-bubbles,
+        0 -2.5px 0 0 $color-bubbles, 0 2.5px 0 0 $color-bubbles;
     }
 
     //.card__type-text--dark
     &--dark {
-      background-color: $mid-teal;
-      box-shadow: -2.5px 0 0 0 $mid-teal, 2.5px 0 0 0 $mid-teal,
-        0 -2.5px 0 0 $mid-teal, 0 2.5px 0 0 $mid-teal;
+      background-color: $color-aqua;
+      box-shadow: -2.5px 0 0 0 $color-aqua, 2.5px 0 0 0 $color-aqua,
+        0 -2.5px 0 0 $color-aqua, 0 2.5px 0 0 $color-aqua;
     }
 
-    /** Types **/
+    /*----------------------------------------------------------
+      Pokemon Types
+    --------------------------------------------------------*/
 
     //.card__type-text--grass
     &--grass {
-      background-color: #79c951;
-      box-shadow: -2.5px 0 0 0 #79c951, 2.5px 0 0 0 #79c951,
-        0 -2.5px 0 0 #79c951, 0 2.5px 0 0 #79c951;
+      @include pixel-background($color-green-apple, 2.5px, -2.5px);
     }
 
     //.card__type-text--poison
     &--poison {
       color: whitesmoke;
-      background-color: #ca4bce;
-      box-shadow: -2.5px 0 0 0 #ca4bce, 2.5px 0 0 0 #ca4bce,
-        0 -2.5px 0 0 #ca4bce, 0 2.5px 0 0 #ca4bce;
+      @include pixel-background($color-jigglypuff, 2.5px, -2.5px);
     }
 
     //.card__type-text--fire
     &--fire {
-      background-color: #f0802f;
-      box-shadow: -2.5px 0 0 0 #f0802f, 2.5px 0 0 0 #f0802f,
-        0 -2.5px 0 0 #f0802f, 0 2.5px 0 0 #f0802f;
+      @include pixel-background($color-charizard, 2.5px, -2.5px);
     }
 
     //.card__type-text--flying
     &--flying {
-      background-color: #a891f1;
-      box-shadow: -2.5px 0 0 0 #a891f1, 2.5px 0 0 0 #a891f1,
-        0 -2.5px 0 0 #a891f1, 0 2.5px 0 0 #a891f1;
+      @include pixel-background($color-lavender, 2.5px, -2.5px);
     }
 
     //.card__type-text--water
     &--water {
       color: whitesmoke;
-      background-color: #3a78ff;
-      box-shadow: -2.5px 0 0 0 #3a78ff, 2.5px 0 0 0 #3a78ff,
-        0 -2.5px 0 0 #3a78ff, 0 2.5px 0 0 #3a78ff;
+      @include pixel-background($color-midday-blue, 2.5px, -2.5px);
     }
 
     //.card__type-text--bug
     &--bug {
-      background-color: #a7b820;
-      box-shadow: -2.5px 0 0 0 #a7b820, 2.5px 0 0 0 #a7b820,
-        0 -2.5px 0 0 #a7b820, 0 2.5px 0 0 #a7b820;
+      @include pixel-background($color-bugs-life, 2.5px, -2.5px);
     }
 
     //.card__type-text--normal
     &--normal {
-      background-color: #a9a978;
-      box-shadow: -2.5px 0 0 0 #a9a978, 2.5px 0 0 0 #a9a978,
-        0 -2.5px 0 0 #a9a978, 0 2.5px 0 0 #a9a978;
+      @include pixel-background($color-normal, 2.5px, -2.5px);
     }
 
     //.card__type-text--electric
     &--electric {
-      background-color: #f7d12f;
-      box-shadow: -2.5px 0 0 0 #f7d12f, 2.5px 0 0 0 #f7d12f,
-        0 -2.5px 0 0 #f7d12f, 0 2.5px 0 0 #f7d12f;
+      @include pixel-background($color-buzz, 2.5px, -2.5px);
     }
 
     //.card__type-text--ground
     &--ground {
-      background-color: #e0bf67;
-      box-shadow: -2.5px 0 0 0 #e0bf67, 2.5px 0 0 0 #e0bf67,
-        0 -2.5px 0 0 #e0bf67, 0 2.5px 0 0 #e0bf67;
+      @include pixel-background($color-sand, 2.5px, -2.5px);
     }
 
     //.card__type-text--fairy
     &--fairy {
-      background-color: #f0b5bd;
-      box-shadow: -2.5px 0 0 0 #f0b5bd, 2.5px 0 0 0 #f0b5bd,
-        0 -2.5px 0 0 #f0b5bd, 0 2.5px 0 0 #f0b5bd;
+      @include pixel-background($color-fairy, 2.5px, -2.5px);
     }
 
     //.card__type-text--fighting
     &--fighting {
-      background-color: #d6563f;
-      box-shadow: -2.5px 0 0 0 #d6563f, 2.5px 0 0 0 #d6563f,
-        0 -2.5px 0 0 #d6563f, 0 2.5px 0 0 #d6563f;
+      @include pixel-background($color-adobe, 2.5px, -2.5px);
     }
 
     //.card__type-text--psychic
     &--psychic {
       color: whitesmoke;
-      background-color: #f95889;
-      box-shadow: -2.5px 0 0 0 #f95889, 2.5px 0 0 0 #f95889,
-        0 -2.5px 0 0 #f95889, 0 2.5px 0 0 #f95889;
+      @include pixel-background($color-fuschia, 2.5px, -2.5px);
     }
 
     //.card__type-text--rock
     &--rock {
-      background-color: #b9a038;
-      box-shadow: -2.5px 0 0 0 #b9a038, 2.5px 0 0 0 #b9a038,
-        0 -2.5px 0 0 #b9a038, 0 2.5px 0 0 #b9a038;
+      @include pixel-background($color-pyramid, 2.5px, -2.5px);
     }
 
     //.card__type-text--steel
     &--steel {
-      background-color: #b8b8cf;
-      box-shadow: -2.5px 0 0 0 #b8b8cf, 2.5px 0 0 0 #b8b8cf,
-        0 -2.5px 0 0 #b8b8cf, 0 2.5px 0 0 #b8b8cf;
+      @include pixel-background($color-steel, 2.5px, -2.5px);
     }
 
     //.card__type-text--ice
     &--ice {
-      background-color: #97d8d7;
-      box-shadow: -2.5px 0 0 0 #97d8d7, 2.5px 0 0 0 #97d8d7,
-        0 -2.5px 0 0 #97d8d7, 0 2.5px 0 0 #97d8d7;
+      @include pixel-background($color-iceburg, 2.5px, -2.5px);
     }
 
     //.card__type-text--ghost
     &--ghost {
       color: whitesmoke;
-      background-color: #705899;
-      box-shadow: -2.5px 0 0 0 #705899, 2.5px 0 0 0 #705899,
-        0 -2.5px 0 0 #705899, 0 2.5px 0 0 #705899;
+      @include pixel-background($color-ghost, 2.5px, -2.5px);
     }
 
     //.card__type-text--dragon
     &--dragon {
       color: whitesmoke;
-      background-color: #642af8;
-      box-shadow: -2.5px 0 0 0 #642af8, 2.5px 0 0 0 #642af8,
-        0 -2.5px 0 0 #642af8, 0 2.5px 0 0 #642af8;
+      @include pixel-background($color-galaxy, 2.5px, -2.5px);
     }
   }
 }

@@ -1,6 +1,11 @@
-$dark-teal: #05384b;
-$highlight-blue: #0ff;
-$alice-blue-mid: #e1f1ff;
+@import "./scss/main.scss";
+
+@font-face {
+  font-family: "Pokemon GB";
+  src: url("https://cdn.rawgit.com/Superpencil/pokemon-font/d36892e5/fonts/pokemon-font.eot");
+  src: url("https://cdn.rawgit.com/Superpencil/pokemon-font/d36892e5/fonts/pokemon-font.woff");
+  font-weight: 400;
+}
 
 %btn {
   margin-left: 15px;
@@ -11,61 +16,37 @@ $alice-blue-mid: #e1f1ff;
   padding: 6px 10px;
   font-family: "Pokemon GB", monospace;
 }
+
 .app {
   text-align: center;
   &__btn {
     @extend %btn;
 
-    border: solid 1px $dark-teal;
-    color: $dark-teal;
+    border: solid 1px $color-midnight;
+    color: $color-midnight;
 
     //.app__btn--dark-mode
     &--dark-mode {
       @extend %btn;
 
-      border: solid 1px $highlight-blue;
-      color: $highlight-blue;
+      border: solid 1px $color-lazer-blue;
+      color: $color-lazer-blue;
     }
   }
 
   //.app--dark-mode
   &--dark-mode {
     text-align: center;
-    background: $dark-teal;
+    background: $color-midnight;
+    color: white;
+    height: 100vh;
   }
 }
 
-.app-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: app-logo-spin infinite 20s linear;
-  }
-}
-
-.app-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.app-link {
-  color: #61dafb;
-}
-
-@keyframes app-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.not-found {
+  //.not-found__img
+  &__img {
+    width: 100%;
+    max-width: 300px;
   }
 }
