@@ -72,6 +72,7 @@ class App extends Component {
     /** Reset the allPokemon[] */
     this.setState({ allPokemon: [] });
 
+    /** Get more details about pokemon */
     fetch(pokemon.url)
       .then((response) => response.json())
       .then((pokeData) => {
@@ -180,6 +181,7 @@ class App extends Component {
 
         <div className="app__tools">
           <SearchBox
+            isDarkMode={isDarkMode}
             placeholder="Search Pokemon"
             handleChange={this.handleChange}
           ></SearchBox>

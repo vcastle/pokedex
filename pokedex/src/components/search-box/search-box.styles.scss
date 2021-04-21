@@ -1,20 +1,42 @@
 @import "../../scss/main.scss";
 
-.search {
-  -webkit-appearance: none;
-  border: 1px solid $color-eggshell;
+%search {
   outline: none;
   border-radius: 35px;
   padding: 5px 20px;
   width: 200px;
   line-height: 30px;
   margin-bottom: 25px;
-  background: $color-smoke;
   font-variant-caps: all-small-caps;
+  -webkit-appearance: none;
 }
 
-.search:focus {
-  border-radius: 35px;
-  border: 2px solid $color-lazer-blue;
-  background: none;
+.search {
+  @extend %search;
+
+  border: 1px solid $color-eggshell;
+  background: $color-smoke;
+
+  &--dark-mode {
+    @extend %search;
+
+    background: $color-midnight;
+    border: 1px solid $color-lazer-blue;
+
+    &::placeholder {
+      color: $color-lazer-blue;
+    }
+
+    &:focus {
+      border-radius: 35px;
+      border: 0.5px solid $color-lazer-blue;
+      background: none;
+    }
+  }
+
+  &:focus {
+    border-radius: 35px;
+    border: 2px solid $color-lazer-blue;
+    background: none;
+  }
 }
